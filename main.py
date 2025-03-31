@@ -12,11 +12,14 @@ def get_2day_weather_forecast():
         response.raise_for_status()
         data = response.json()
         
-        with open("weather_forecast.json", "w") as json_file:
-            json.dump(data, json_file, indent=4)  # Save for readability
+        # Save the data to a .jsonl file
+        with open("weather_forecast.jsonl", "w") as jsonl_file:
+            # Write each top-level key-value pair as a separate JSONL line
+            for key, value in data.items():
+                jsonl_file.write(json.dumps({key: value}) + "\n")
 
         # Save the file to the Google Cloud Storage bucket
-        functions.upload_to_gcs("weather_forecast.json", "weather_forecast.json")
+        functions.upload_to_gcs("weather_forecast.jsonl", "weather_forecast.jsonl")
     
     except requests.exceptions.RequestException as e:
         print("Error fetching data:", e)

@@ -1,4 +1,0 @@
-pip install google-cloud-storage
-pip install google-cloud-secret-manager
-pip install google-cloud-bigquery
-set GOOGLE_APPLICATION_CREDENTIALS="C:\Users\maria.onofrei\Documents\github\data-import\weatherapp-455117-2c3525ada720.json"
