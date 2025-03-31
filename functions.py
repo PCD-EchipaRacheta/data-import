@@ -2,6 +2,8 @@ from google.cloud import storage
 from google.cloud import secretmanager
 import os
 
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:/Users/Maria/OneDrive/Documents/GitHub/data-import/weatherapp-455117-2c3525ada720.json"
+
 def upload_to_gcs(source_file_name, destination_blob_name):
     """Uploads a file to Google Cloud Storage."""
     try:
@@ -85,9 +87,6 @@ def list_gcs_files():
         print(f"An error occurred: {e}")
 
 # list_gcs_files()
-
-
-
 
 
 def access_secret_weatherAPIKey():

@@ -1,5 +1,6 @@
 # Ignore Google Cloud credentials file
 weatherapp-455117-2c3525ada720.json
+weather_forecast.json
 
 .DS_STORE
 node_modules
