@@ -5,7 +5,7 @@ import functions
 API_key = functions.access_secret_weatherAPIKey()
 
 def get_2day_weather_forecast():
-    url = f"http://api.weatherapi.com/v1/forecast.json?key={API_key}&q=Iasi&days=2&aqi=no&alerts=no"
+    url = f"http://api.weatherapi.com/v1/forecast.json?key={API_key}&q=Iasi&days=2&aqi=no&alerts=yes"
     
     try:
         response = requests.get(url)
